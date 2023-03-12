@@ -39,6 +39,23 @@ SOFTWARE.
     <title>Nyastral</title>
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./dist/css/style.css">
+
+    <script>
+		const texts = [
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod felis sed nulla pharetra tristique... Yep, this website is as empty as a politician's promises. But don't worry, I'm cooking up something great. Stay tuned!",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod felis sed nulla pharetra tristique... Why am I even typing this? There's nothing here yet! Stay tuned for actual content.",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod felis sed nulla pharetra tristique. Why did I bother putting up a website with no content? Great question. I'm still trying to figure that out myself. Stick around for the mystery to unravel!",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod felis sed nulla pharetra tristique. I know what you're thinking: \"Why bother with a website that has no content?\" Trust me, I'm asking myself the same thing. Stay tuned, we'll get there eventually!",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod felis sed nulla pharetra tristique... Yup, we know the website's emptier than a bank account after a night out. But don't worry, I've got big plans! Stick around for the show.",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod felis sed nulla pharetra tristique... Don't worry, you're not lost. This is still a website, we're just waiting for our content to arrive fashionably late. Hang tight!"
+		];
+
+		const randomText = texts[Math.floor(Math.random() * texts.length)];
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("random-text").innerHTML = randomText;
+        });
+	</script>
 </head>
 
 <body>
@@ -46,15 +63,13 @@ SOFTWARE.
         <div class="p-4 sm:px-12 lg:p-16 lg:h-full flex items-center 2xl:col-span-2">
             <div>
                 <img class="hidden lg:block mb-5 h-16 absolute top-8 left-8" src="assets/img/favicon.png" />
-                <h1 class="text-4xl sm:text-5xl font-bold mb-5"><span
-                        class="text-transparent bg-clip-text bg-gradient-to-br to-green-500 from-blue-600">Open</span>
-                    software
-                    <br>
-                    for the open <span
-                        class="text-transparent bg-clip-text bg-gradient-to-br from-green-500 to-blue-600">world.</span>
+                <h1 class="text-4xl sm:text-5xl font-bold mb-5">
+                    
+                    Doing <span class="text-transparent bg-clip-text bg-gradient-to-br to-green-500 from-blue-600">stuff</span>.
                 </h1>
-                <p class="text-xl sm:text-2xl font-light">Making software is not just about developing useful tools. It is about
-                    sharing those solutions with others to achieve amazing things together.</p>
+                <p id="random-text" class="text-xl sm:text-2xl font-light">
+                    <!-- Random text is injected here -->
+                </p>
             </div>
         </div>
         <div class="p-4 lg:p-16 2xl:col-span-3">

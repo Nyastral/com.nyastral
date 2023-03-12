@@ -224,6 +224,11 @@ button,
 Remove the inner border and padding in Firefox.
 */
 
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 /**
 Restore the focus styles unset by the previous rule.
 */
@@ -253,6 +258,11 @@ progress {
 Correct the cursor style of increment and decrement buttons in Safari.
 */
 
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
 /**
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
@@ -262,10 +272,21 @@ Correct the cursor style of increment and decrement buttons in Safari.
 Remove the inner padding in Chrome and Safari on macOS.
 */
 
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 /**
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Change font properties to 'inherit' in Safari.
 */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
 
 /*
 Interactive
@@ -417,11 +438,6 @@ textarea {
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1;
   color: #9ca3af;
 }
@@ -597,22 +613,9 @@ video {
   min-height: 100vh;
 }
 
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
   }
 }
 
@@ -623,43 +626,21 @@ video {
   }
 }
 
-@-webkit-keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
 @keyframes pulse {
   50% {
     opacity: .5;
   }
 }
 
-@-webkit-keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
@@ -688,11 +669,6 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.from-green-500 {
-  --tw-gradient-from: #10b981;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(16, 185, 129, 0));
-}
-
 .from-blue-600 {
   --tw-gradient-from: #2563eb;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(37, 99, 235, 0));
@@ -700,10 +676,6 @@ video {
 
 .to-green-500 {
   --tw-gradient-to: #10b981;
-}
-
-.to-blue-600 {
-  --tw-gradient-to: #2563eb;
 }
 
 .bg-clip-text {
